@@ -1,0 +1,179 @@
+\documentclass{beamer}
+
+\title{A tour of Git and GitHub}
+\author{Nicolas Escobar}
+\date{\today}
+
+\begin{document}
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\section{Git}
+
+\subsection{Git Basics}
+
+\begin{frame}
+    \frametitle{What's Git?}
+    \begin{itemize}
+        \item Git $\neq$ GitHub
+        \item Git $=$ version control.
+        \item GitHub $=$ collaboration $+$ sharing.
+    \end{itemize}
+
+    Git is a way to keep track of \textit{some} of the changes of \textit{some} the contents of a directory. 
+    
+    The full record of those changes is called a \textit{repository} or \textit{repo}. 
+
+    I'll focus on Git first. 
+\end{frame}
+
+\begin{frame}
+    \frametitle{How do I use Git?}
+    \begin{itemize}
+        \item It ships out of the box for Mac and Linux machines. 
+        \item Easy to install on Windows*.
+        \item CLI, VSCode and RStudio. 
+    \end{itemize}
+\end{frame} 
+
+\begin{frame}
+    \frametitle{Why would I use Git?}
+    \begin{itemize}
+        \item A lot of people use it. 
+        \item A lot of systems are integrated with it. 
+        \item It has more features than OneDrive.
+        \item Local system.
+    \end{itemize}
+\end{frame}
+
+\subsection{Git workflow}
+
+\begin{frame}
+    \frametitle{Ideal everyday Git}
+    \begin{itemize}
+        \item Issue
+        \item Make and save changes
+        \item Stage the changes you want to keep
+        \item Commit
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Commit messages}
+    Everytime you commit, you have to create a message. It's like an email to yourself:
+    \begin{itemize}
+        \item Timestamp
+        \item Author
+        \item Subject line
+        \item Body
+        \item Line by line changes in staged files
+    \end{itemize}
+\end{frame}
+
+\subsection{Commentary}
+
+\begin{frame}
+    \frametitle{Git is flexible}
+    Git it's just a bunch of notes to yourself.
+    \begin{columns}
+        \column{0.5\textwidth}
+        \begin{itemize}
+            \item Work 9-5. 
+            \item Stage everything
+            \item Commit message: "my update"
+        \end{itemize}
+        \column{0.5\textwidth}
+        \begin{itemize}
+            \item Work on \textit{one} issue
+            \item Stage only changes related to that issue
+            \item Write informative commit message
+        \end{itemize}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{What's the point?}
+    \begin{itemize}
+        \item You have something that works on Monday
+        \item You work all week to add something to it
+        \item You realize on Friday that you broke it
+    \end{itemize}
+    Now you can: 
+    \begin{itemize}
+        \item Check commit messages to see at which commit you broke it
+        \item Send the entire project back to the commit before that
+    \end{itemize}
+\end{frame} 
+
+\subsection{Branching}
+\begin{frame}[fragile]
+    \frametitle{Why would you need branches?}
+    Motivation:
+    \begin{itemize}
+        \item \verb|lm| $+$ base R plot. 
+        \item You need $ggplot$
+        \item You want \verb|glm|
+    \end{itemize}
+    You want to work in parallel. 
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Branch workflow}
+    \begin{columns}
+        \column{0.5\textwidth}
+    \begin{itemize}
+        \item Create an experimental branch
+        \item Implement \verb|glm|
+        \item Commit ($c_1$)
+    \end{itemize}
+    \column{0.5\textwidth}
+    \begin{itemize}
+        \item Implement \verb|ggplot|
+        \item Commit ($c_2$)
+    \end{itemize}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Branch workflow continued}
+    \begin{itemize}
+        \item Merge (this commits, $c_3$)
+        \item Test
+    \end{itemize}
+    \begin{columns}
+        \column{0.5\textwidth}
+        \begin{itemize}
+        \item It worked
+        \item Go on based on $c_3$
+        \end{itemize}
+        \column{0.5\textwidth}
+        \begin{itemize}
+            \item It didn't work
+            \item Revert to $c_2$
+        \end{itemize}
+    \end{columns}
+\end{frame}
+
+\subsection{Under the Hood}
+
+\begin{frame}[fragile]
+    \frametitle{What does Git do?}
+    \begin{itemize}
+        \item \verb|.git| directory
+        \item Each commit has a unique ID. 
+        \item \verb|HEAD| pointer
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Limitations}
+    \begin{itemize}
+        \item Works best for text files (.R, .txt, ...)
+        \item Not great for large files 
+    \end{itemize}
+\end{frame}
+
+
+\end{document}
+
