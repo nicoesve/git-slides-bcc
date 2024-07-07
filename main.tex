@@ -178,7 +178,70 @@
 
 \subsection{Remote repositories}
 
-\subsection{Public vs private repositories}
+\begin{frame}[fragile]
+    \frametitle{Collaboration}
+    Simple syncing has drawbacks.
+
+    In previous example:
+    \begin{columns}
+        \column{0.5\textwidth}
+        Nico: 
+        \begin{itemize}
+            \item Expect \verb|lm|
+            \item Change plot
+            \item End up with \verb|glm|
+        \end{itemize}
+        \column{0.5\textwidth}
+        Humphrey:
+        \begin{itemize}
+            \item Changes to \verb|glm|
+        \end{itemize}
+    \end{columns}
+    
+    Humphrey's changes might have broken my version
+\end{frame}
+
+\begin{frame}
+    \frametitle{GitHub}
+    Solution:
+    \begin{itemize}
+        \item Version of the repo in the cloud
+        \item Also local versions
+        \item Stablish a policy for updating cloud repo using local repos
+    \end{itemize}
+
+    The cloud version is called a \textit{remote} repo. 
+
+    GitHub: 
+    \begin{itemize}
+        \item Cloud service to host remote repos
+        \item Provides a URL
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Linking a remote repo}
+    Hey Git: the repo at this URL is going to be the remote repo for this local repo.
+    \begin{itemize}
+        \item Both local and remote may have several branches
+        \item Associate to each local branch a remote branch, called the \textit{upstream}
+        \item \verb|nico-branch| and \verb|humphrey-branch| vs \verb|main| and \verb|experimental|
+    \end{itemize}
+\end{frame}
+        
+\begin{frame}[fragile]
+    \frametitle{Workflow}
+    \begin{itemize}
+        \item Humphrey made changes, so \verb|experimental| is behind
+        \item I checkout \verb|experimental| and \textit{pull} \verb|humphrey-branch|
+        \item I work on \verb|main|. It is now ahead of \verb|main|
+        \item When I'm ready to share, I \textit{push} to \verb|nico-branch|.
+    \end{itemize}
+\end{frame} 
+
+\subsection{Public and private repositories}
+
+\subsection{Pull requests}
 
 \subsection{GitHub additional features}
 
