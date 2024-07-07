@@ -5,6 +5,7 @@
 \date{\today}
 
 \begin{document}
+
 \begin{frame}
     \titlepage
 \end{frame}
@@ -75,7 +76,7 @@
 
 \begin{frame}
     \frametitle{Git is flexible}
-    Git it's just a bunch of notes to yourself.
+    Git it's just a bunch of notes to yourself. You can: \vspace{0.2cm}
     \begin{columns}
         \column{0.5\textwidth}
         \begin{itemize}
@@ -121,16 +122,18 @@
 \begin{frame}[fragile]
     \frametitle{Branch workflow}
     \begin{columns}
-        \column{0.5\textwidth}
+        
+    \column{0.5\textwidth}
     \begin{itemize}
-        \item Create an experimental branch
-        \item Implement \verb|glm|
-        \item Commit ($c_1$)
+        \item Work on \verb|main| branch
+        \item Implement \verb|ggplot|
+        \item Commit ($c_2$)
     \end{itemize}
     \column{0.5\textwidth}
     \begin{itemize}
-        \item Implement \verb|ggplot|
-        \item Commit ($c_2$)
+        \item Create an \verb|experimental| branch
+        \item Implement \verb|glm|
+        \item Commit ($c_1$)
     \end{itemize}
 \end{columns}
 \end{frame}
@@ -141,6 +144,9 @@
         \item Merge (this commits, $c_3$)
         \item Test
     \end{itemize}
+    \vspace{0.2cm}
+    Either:
+    \vspace{0.2cm}
     \begin{columns}
         \column{0.5\textwidth}
         \begin{itemize}
@@ -158,7 +164,7 @@
 \subsection{Under the Hood}
 
 \begin{frame}[fragile]
-    \frametitle{What does Git do?}
+    \frametitle{What exactly does Git do?}
     \begin{itemize}
         \item \verb|.git| directory
         \item Each commit has a unique ID. 
@@ -183,6 +189,7 @@
     Simple syncing has drawbacks.
 
     In previous example:
+    \vspace{0.4cm}
     \begin{columns}
         \column{0.5\textwidth}
         Nico: 
@@ -197,6 +204,7 @@
             \item Changes to \verb|glm|
         \end{itemize}
     \end{columns}
+    \vspace{0.2cm}
     
     Humphrey's changes might have broken my version
 \end{frame}
@@ -211,6 +219,8 @@
     \end{itemize}
 
     The cloud version is called a \textit{remote} repo. 
+
+    \vspace{0.2cm}
 
     GitHub: 
     \begin{itemize}
@@ -234,14 +244,14 @@
     \begin{itemize}
         \item Humphrey made changes, so \verb|experimental| is behind
         \item I checkout \verb|experimental| and \textit{pull} \verb|humphrey-branch|
-        \item I work on \verb|main|. It is now ahead of \verb|main|
+        \item I work on \verb|main|. It is now ahead of \verb|nico-branch|
         \item When I'm ready to share, I \textit{push} to \verb|nico-branch|.
     \end{itemize}
 \end{frame} 
 
 \subsection{Public and private repositories}
 
-\begin{frame}
+\begin{frame}[fragile]
     \frametitle{Forks}
     What if Humphrey asks Cleto (an external collaborator) for help? 
 
@@ -277,12 +287,13 @@
 
     \begin{itemize}
         \item Wickham tells GH: this is the official \verb|tidyverse| repo
-        \item WIckham tells GH: whenever I make a commit to this repo, build the R package and submit it to CRAN
+        \item Wickham tells GH: whenever I make a commit to this repo, build the R package and submit it to CRAN
     \end{itemize}
 \end{frame}
 
-
-
+\begin{frame}
+    Demo!
+\end{frame}
 
 \end{document}
 
