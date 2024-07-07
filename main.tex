@@ -174,6 +174,115 @@
     \end{itemize}
 \end{frame}
 
+\section{GitHub}
+
+\subsection{Remote repositories}
+
+\begin{frame}[fragile]
+    \frametitle{Collaboration}
+    Simple syncing has drawbacks.
+
+    In previous example:
+    \begin{columns}
+        \column{0.5\textwidth}
+        Nico: 
+        \begin{itemize}
+            \item Expect \verb|lm|
+            \item Change plot
+            \item End up with \verb|glm|
+        \end{itemize}
+        \column{0.5\textwidth}
+        Humphrey:
+        \begin{itemize}
+            \item Changes to \verb|glm|
+        \end{itemize}
+    \end{columns}
+    
+    Humphrey's changes might have broken my version
+\end{frame}
+
+\begin{frame}
+    \frametitle{GitHub}
+    Solution:
+    \begin{itemize}
+        \item Version of the repo in the cloud
+        \item Also local versions
+        \item Stablish a policy for updating cloud repo using local repos
+    \end{itemize}
+
+    The cloud version is called a \textit{remote} repo. 
+
+    GitHub: 
+    \begin{itemize}
+        \item Cloud service to host remote repos
+        \item Provides a URL
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Linking a remote repo}
+    Hey Git: the repo at this URL is going to be the remote repo for this local repo.
+    \begin{itemize}
+        \item Both local and remote may have several branches
+        \item Associate to each local branch a remote branch, called the \textit{upstream}
+        \item \verb|nico-branch| and \verb|humphrey-branch| vs \verb|main| and \verb|experimental|
+    \end{itemize}
+\end{frame}
+        
+\begin{frame}[fragile]
+    \frametitle{Workflow}
+    \begin{itemize}
+        \item Humphrey made changes, so \verb|experimental| is behind
+        \item I checkout \verb|experimental| and \textit{pull} \verb|humphrey-branch|
+        \item I work on \verb|main|. It is now ahead of \verb|main|
+        \item When I'm ready to share, I \textit{push} to \verb|nico-branch|.
+    \end{itemize}
+\end{frame} 
+
+\subsection{Public and private repositories}
+
+\begin{frame}
+    \frametitle{Forks}
+    What if Humphrey asks Cleto (an external collaborator) for help? 
+
+    \begin{itemize}
+        \item Cleto can \textit{fork} the GitHub repo. 
+        \item Different repo, but can sync to the original one. 
+        \item Cleto creates \verb|cleto-branch| and works on it
+        \item Cleto creates a \textit{pull request} to the \verb|humphrey-branch| of the original GH repo
+        \item Humphrey (or me) may or may not accept is
+    \end{itemize}
+\end{frame}
+
+\subsection{GitHub additional features}
+
+\begin{frame}
+    \frametitle{Issues and other PM}
+    Large open source projects need etiquete
+    \begin{itemize}
+        \item Users open issues (bugs, enhancements, documentation)
+        \item Maintainers filter, organize and assign them to developers
+        \item Developers may make commits and reference the issue in the commit messages
+        \item External collaborators can fork, make changes and pull requests
+    \end{itemize}
+\end{frame}
+
+\subsection{Integrations}
+
+\begin{frame}[fragile]
+    \frametitle{GitHub Actions}
+    (Advanced)
+
+    How does \verb|tidyverse| release a new version? Through GH \verb|Actions|. 
+
+    \begin{itemize}
+        \item Wickham tells GH: this is the official \verb|tidyverse| repo
+        \item WIckham tells GH: whenever I make a commit to this repo, build the R package and submit it to CRAN
+    \end{itemize}
+\end{frame}
+
+
+
 
 \end{document}
 
