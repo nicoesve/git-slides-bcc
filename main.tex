@@ -241,11 +241,46 @@
 
 \subsection{Public and private repositories}
 
-\subsection{Pull requests}
+\begin{frame}
+    \frametitle{Forks}
+    What if Humphrey asks Cleto (an external collaborator) for help? 
+
+    \begin{itemize}
+        \item Cleto can \textit{fork} the GitHub repo. 
+        \item Different repo, but can sync to the original one. 
+        \item Cleto creates \verb|cleto-branch| and works on it
+        \item Cleto creates a \textit{pull request} to the \verb|humphrey-branch| of the original GH repo
+        \item Humphrey (or me) may or may not accept is
+    \end{itemize}
+\end{frame}
 
 \subsection{GitHub additional features}
 
+\begin{frame}
+    \frametitle{Issues and other PM}
+    Large open source projects need etiquete
+    \begin{itemize}
+        \item Users open issues (bugs, enhancements, documentation)
+        \item Maintainers filter, organize and assign them to developers
+        \item Developers may make commits and reference the issue in the commit messages
+        \item External collaborators can fork, make changes and pull requests
+    \end{itemize}
+\end{frame}
+
 \subsection{Integrations}
+
+\begin{frame}[fragile]
+    \frametitle{GitHub Actions}
+    (Advanced)
+
+    How does \verb|tidyverse| release a new version? Through GH \verb|Actions|. 
+
+    \begin{itemize}
+        \item Wickham tells GH: this is the official \verb|tidyverse| repo
+        \item WIckham tells GH: whenever I make a commit to this repo, build the R package and submit it to CRAN
+    \end{itemize}
+\end{frame}
+
 
 
 
